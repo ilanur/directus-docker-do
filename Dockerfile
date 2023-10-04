@@ -15,7 +15,7 @@ RUN corepack enable \
 EXPOSE 8055
 
 USER node
-RUN pnpm install directus-extension-field-actions && pnpm config set auto-install-peers true
+RUN pnpm install directus-extension-field-actions && pnpm config set auto-install-peers true && pnpm install https://github.com/ilanur/directus-extension-customRetrieveItem &&pnpm install https://github.com/ilanur/directus-extension-ai-operations
 CMD : \
 	&& node /directus/cli.js bootstrap \
 	&& node /directus/cli.js start \
